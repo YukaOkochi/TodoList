@@ -19,7 +19,7 @@ try{
 
     $db = new Categorys();    
     $_SESSION['category_name'] = $db->selectCategoryId($_SESSION['category_id']); 
-    
+
     header('Location: ./');
 } catch (Exception $e) {
     var_dump($e);

@@ -39,7 +39,7 @@ $token = SaftyUtil::generateToken();
             <span class="border-bottom">
                 <span class="text-primary display-6">カテゴリー</span>
                 <span>ようこそ<?= $_SESSION['user']['user'] ?>さん</span>
-                <a href="./login.php">ログアウト</a>
+                <a href="./logout.php">ログアウト</a>
             </span>
             <span style="margin-top:10px;">新規カテゴリー登録</span>
             <div class="text-center">

@@ -11,6 +11,10 @@ if(empty($_SESSION['user'])) {
     header('Location: ./login.php');
 }
 
+if(empty($_SESSION['category_id'])) {
+    header('Location: ./category.php');
+}
+
 if(isset($_SESSION['msg']['err'])) {
     unset($_SESSION['msg']['err']);
 }
@@ -61,7 +65,7 @@ $token = SaftyUtil::generateToken();
             <span class="border-bottom">
                 <span class="text-primary display-6"><?= $_SESSION['category_name'] ?>一覧</span>
                 <span>ようこそ<?= $_SESSION['user']['user'] ?>さん</span>
-                <a href="./login.php">ログアウト</a>
+                <a href="./logout.php">ログアウト</a>
             </span>
             <a href="./add.php">作業登録</a>
             <form action="./" method="post">
@@ -108,6 +112,9 @@ $token = SaftyUtil::generateToken();
                 </table>
             <?php endif ?>
             <?php if(!isset($_POST["search"])) : ?>
+                <?php if(isset($_SESSION['category_id'])) {
+                unset($_SESSION['category_id']);
+                } ?> 
             <a href="./category.php">戻る</a>
             <?php endif ?>
 

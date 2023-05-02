@@ -40,7 +40,7 @@ $token = SaftyUtil::generateToken();
             <span class="border-bottom">
                 <div class="text-primary display-6">一覧削除確認</div>
                 <span>ようこそ<?= $_SESSION['user']['user'] ?>さん</span>
-                <a href="./login.php">ログアウト</a>
+                <a href="./logout.php">ログアウト</a>
             </span>
             <div><?= $_POST['category_name'] ?>の中に入っている下記のデータも全て削除しますがよろしいですか？</div>
             <?php foreach($item as $v) : ?>                       

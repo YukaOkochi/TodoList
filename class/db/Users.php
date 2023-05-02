@@ -5,7 +5,7 @@ class Users extends Base {
         parent::__construct();
     }
 
-    public function getUser(string $name, string $password): array {
+    public function getUser(string $name, string $password) {
         $rec = $this->findUserByName($name);
         if (empty($rec)) {
             return [];
@@ -17,13 +17,15 @@ class Users extends Base {
         return [];
     }
 
-    private function findUserByName(string $name): array {
+    private function findUserByName(string $name) {
         $sql = 'select * from users where user=:name';
         $stmt = $this->dbh->prepare($sql);
         $stmt->bindValue(':name', $name, PDO::PARAM_STR);
         $stmt->execute();
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-
+        if (empty($rec)) {
+            return [];
+        }
         return $rec;
     }
 

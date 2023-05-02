@@ -4,6 +4,10 @@ session_regenerate_id();
 
 require_once('./class/config/Config.php');
 require_once('./class/util/SaftyUtil.php');
+
+if(isset($_SESSION['login']['name'])) {
+    unset($_SESSION['login']['name']);
+}
 ?>
 
 <!DOCTYPE html>

@@ -18,7 +18,7 @@ require_once('./class/db/Base.php');
         <div class="row my-3">           
             <span class="border-bottom">
                 <div class="text-primary display-6">エラー</div>
-                <a href="./login.php">ログアウト</a>
+                <a href="./logout.php">ログアウト</a>
             </span>
             <div class="text-center">
                 <?php if(isset($_SESSION['msg']['err'])) :?>
